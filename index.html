@@ -2871,7 +2871,7 @@ function renderGrid(){
         <span class="card-mode">${useQueue?'Antrian':'No Queue'}</span>
       </div>
       <div class="card-extra-badge${!useQueue?' show':''}">+Rp2.000 tanpa antrian</div>
-      <div class="card-lpm"><span></span> 500 LPM Disebarkan</div>
+      <div class="card-lpm"><span></span> 600 LPM Disebarkan</div>
       <div style="font-size:10px;color:var(--green);background:var(--green-bg);border:1px solid var(--green-bd);border-radius:6px;padding:3px 9px;margin-bottom:4px;width:fit-content;font-weight:600;">✓ Tanpa Biaya Fee</div>
       <div class="card-actions">
         <button class="btn-cart${inCart?' added':''}" onclick="addToCart(${p.id})" id="cartBtn${p.id}">
@@ -2968,10 +2968,10 @@ function buildPayContext(context) {
     payTotal = getPrice(p);
     summaryHTML =
       `<div class="pm-order-row"><span class="pm-order-lbl">Produk</span><span class="pm-order-val">Jaseb ${p.name}</span></div>` +
-      `<div class="pm-order-row"><span class="pm-order-lbl">Penyebaran</span><span class="pm-order-val">700 LPM</span></div>` +
+      `<div class="pm-order-row"><span class="pm-order-lbl">Penyebaran</span><span class="pm-order-val">600 LPM</span></div>` +
       `<div class="pm-order-row"><span class="pm-order-lbl">Mode</span><span class="pm-order-val">${useQueue ? 'Pakai Antrian' : 'Tanpa Antrian'}</span></div>` +
       `<div class="pm-total-row"><span class="pm-total-lbl">Total</span><span class="pm-total-val">${rp(payTotal)}</span></div>`;
-    payWaText = `Halo Kak, mau order:\n\nProduk: Jaseb ${p.name}\nMode: ${useQueue ? 'Pakai Antrian' : 'Tanpa Antrian'}\nPenyebaran: 700 LPM\nTotal: ${rp(payTotal)}\nMetode: ${selectedMethod}\n\nTerlampir bukti transfer. Mohon konfirmasinya!`;
+    payWaText = `Halo Kak, mau order:\n\nProduk: Jaseb ${p.name}\nMode: ${useQueue ? 'Pakai Antrian' : 'Tanpa Antrian'}\nPenyebaran: 600 LPM\nTotal: ${rp(payTotal)}\nMetode: ${selectedMethod}\n\nTerlampir bukti transfer. Mohon konfirmasinya!`;
   }
   document.getElementById('pmOrderSummary').innerHTML = summaryHTML;
 }
@@ -3065,7 +3065,7 @@ function goToStep2(method) {
       }).join('\n');
       payWaText = `Halo Kak, saya mau order dari Danzz Store:\n\n${linesTxt}\n\n📦 Paket Jaseb: ${chosenProd.icon} Jaseb ${chosenProd.name} (${rp(chosenPrice)})\nMode: ${useQueue ? 'Pakai Antrian' : 'Tanpa Antrian'}\nTotal: ${rp(payTotal)}\nMetode: ${method}\n\n📋 List yang Disebar:\n${listFormatted}\n\nTerlampir bukti transfer. Mohon konfirmasinya!`;
     } else {
-      payWaText = `Halo Kak, mau order dari Danzz Store:\n\n📦 Paket Jaseb: ${chosenProd.icon} Jaseb ${chosenProd.name}\nHarga: ${rp(chosenPrice)}\nMode: ${useQueue ? 'Pakai Antrian' : 'Tanpa Antrian'}\nPenyebaran: 500 LPM\nMetode: ${method}\n\n📋 List yang Disebar:\n${listFormatted}\n\nTerlampir bukti transfer. Mohon konfirmasinya!`;
+      payWaText = `Halo Kak, mau order dari Danzz Store:\n\n📦 Paket Jaseb: ${chosenProd.icon} Jaseb ${chosenProd.name}\nHarga: ${rp(chosenPrice)}\nMode: ${useQueue ? 'Pakai Antrian' : 'Tanpa Antrian'}\nPenyebaran: 600 LPM\nMetode: ${method}\n\n📋 List yang Disebar:\n${listFormatted}\n\nTerlampir bukti transfer. Mohon konfirmasinya!`;
     }
   } else {
     // Canva: WA text sudah diset di buyCanva, tinggal tambah metode
