@@ -2856,6 +2856,7 @@ function renderGrid(){
   const g=document.getElementById('jasebGrid');
   g.innerHTML=products.map(p=>{
     const price=getPrice(p);
+    const durationHours=p.hours||(p.minute/60);
     const pj=rp(Math.round(price/p.hours))+'/jam';
     const inCart=cart.find(i=>i.id===p.id);
     return`<div class="pcard">
